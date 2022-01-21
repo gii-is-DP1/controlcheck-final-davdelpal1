@@ -32,4 +32,7 @@ public class Care extends BaseEntity{
 	@NotEmpty
 	@JoinColumn(name = "compatiblePetTypes")
     private Set<PetType> compatiblePetTypes;
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "incompatibleCares")
+	private Set<Care> incompatibleCares;
 }
